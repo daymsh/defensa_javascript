@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Formulario de Solicitud de Mantenimiento</title>
+</head>
+<body>
+    <div class="formulario">
+        <h1>Formulario</h1>
+        <h2>Solicitud de Mantenimiento de Estación de Mantenimiento</h2>
+
+        <div class="address">
+            <div class="form-container">
+                <label for="direccion">Dirección del Solicitante:</label>
+                <select id="direccion" name="direccion">
+                    <option value="opcion1">AV. Rafael Pabón, Zona Irpavi - Megacenter</option>
+                    <option value="opcion2">Av Juan Pablo II, El Alto, Bolivia</option>
+                    <option value="opcion3">CALLE 20 DE OCTUBRE ZONA SAN PEDRO</option>
+                    <option value="opcion4">Avenida René Zavaleta Mercado</option>
+                    <option value="opcion5">Avenida 6 De Marzo</option>
+                    <option value="opcion6">Avenida Arce</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <div class="name">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+            </div>
+            <div class="surname">
+                <label for="apellido-paterno">Apellido paterno:</label>
+                <input type="text" id="apellido-paterno" name="apellido-paterno">
+            </div>
+            <div class="surname">
+                <label for="apellido-materno">Apellido materno:</label>
+                <input type="text" id="apellido-materno" name="apellido-materno">
+            </div>
+        </div>
+        <label for="direccion">Fecha de solicitud:</label>
+        <div class="form-container horizontal">
+            
+            <div>
+              
+              <select id="diaSolicitud" name="diaSolicitud">
+                <option value="1">dia</option>
+                <option value="2">1</option>
+                <option value="3">2</option>
+                <option value="4">3</option>
+                <option value="5">4</option>
+                
+              </select>
+            </div>
+            <div>
+              <select id="mesSolicitud" name="mesSolicitud">
+                <option value="1">mes</option>
+                <option value="2">Enero</option>
+                <option value="3">Febrero</option>
+                <option value="4">marzo</option>
+                <option value="5">abril</option>
+                <option value="6">mayo</option>
+                
+              </select>
+            </div>
+            <div>
+              <select id="anioSolicitud" name="anioSolicitud">
+                <option value="anio">año</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+              </select>
+            </div>
+            <script>
+                function validarFormulario() {
+                    var dia = document.getElementById("diaSolicitud").value;
+                    var mes = document.getElementById("mesSolicitud").value;
+                    var anio = document.getElementById("anioSolicitud").value;
+                    var fecha = new Date(anio, mes - 1, dia); // Restar 1 al mes ya que en JavaScript los meses van de 0 a 11
+        
+                    if (isNaN(fecha.getTime())) {
+                        alert("La fecha seleccionada no es válida.");
+                    }
+                }
+            </script>
+          <div class="form-container">
+            <div>
+                <label for="codigoEquipo">Código de Equipo:</label>
+                <input type="text" id="codigoEquipo" name="codigoEquipo">
+            </div>
+        </div>
+    </div>
+    <style>
+        
+    </style>
+</head>
+    <style>
+        .checkbox-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 5px; /* Agregar espacio vertical entre las filas */
+        }
+        .checkbox-container label {
+            margin-right: 10px; /* Agregar espacio horizontal entre las casillas de verificación */
+        }
+    </style>
+<div class="separator"></div>
+    <p>Tipo de dispositivo:</p>
+
+    <form action="/action_page.php">
+        <div class="checkbox-container">
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1"> impresora</label>
+            
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+            <label for="vehicle2"> mouse</label>
+            
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Motorcycle">
+            <label for="vehicle3"> CPU </label>
+        </div>
+        <div class="checkbox-container">
+            <input type="checkbox" id="vehicle4" name="vehicle4" value="Boat">
+            <label for="vehicle4">teclado</label>
+            
+            <input type="checkbox" id="vehicle5" name="vehicle5" value="Bus">
+            <label for="vehicle5"> scanner</label>
+            
+            <input type="checkbox" id="vehicle6" name="vehicle6" value="Train">
+            <label for="vehicle6"> otro</label>
+            <input type="text" id="input6" name="input6" placeholder="Llenar aquí">
+        </div>
+    </form>
+
+    <script>
+        // Agregar validación al formulario
+        document.getElementById("submitBtn").addEventListener("click", function(event) {
+            var input6Value = document.getElementById("input6").value;
+            if (input6Value.trim() === "") {
+                alert("La Opción 6 debe ser llenada");
+                event.preventDefault(); 
+            }
+        });
+    </script>
+   
+    <div>
+    <hr>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: row;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        label {
+            display: inline-block;
+            margin-right: 20px;
+        }
+    </style>
+    <p>el equipo necesita:</p>
+    <form>
+        <input type="radio" id="html" name="fav_language" value="HTML" required>
+        <label for="html">HTML</label><br>
+        <input type="radio" id="css" name="fav_language" value="CSS" required>
+        <label for="css">CSS</label><br>
+        <input type="radio" id="javascript" name="fav_language" value="JavaScript" required>
+        <label for="javascript">JavaScript</label>
+    </form>
+    
+</div>
+<style>.center-label {
+    text-align: center;
+  }
+</style>
+  
+    <div class="separator" ></div>
+    <div class="center-label"></div>
+    <label for="direccion">Fecha:</label>
+        <div class="form-container horizontal">
+            
+            <div>
+              
+              <select id="diaSolicitud" name="diaSolicitud">
+                <option value="1">dia</option>
+                <option value="2">1</option>
+                <option value="3">2</option>
+                <option value="4">3</option>
+                <option value="5">4</option>
+                
+              </select>
+            </div>
+            <div>
+              <select id="mesSolicitud" name="mesSolicitud">
+                <option value="1">mes</option>
+                <option value="2">Enero</option>
+                <option value="3">Febrero</option>
+                <option value="4">marzo</option>
+                <option value="5">abril</option>
+                <option value="6">mayo</option>
+                
+              </select>
+            </div>
+            <div>
+              <select id="anioSolicitud" name="anioSolicitud">
+                <option value="anio">año</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+              </select>
+            </div>
+            <script>
+                function validarFormulario() {
+                    var dia = document.getElementById("diaSolicitud").value;
+                    var mes = document.getElementById("mesSolicitud").value;
+                    var anio = document.getElementById("anioSolicitud").value;
+                    var fecha = new Date(anio, mes - 1, dia); // Restar 1 al mes ya que en JavaScript los meses van de 0 a 11
+        
+                    if (isNaN(fecha.getTime())) {
+                        alert("La fecha seleccionada no es válida.");
+                    }
+                }
+            </script>
+    </div>
+    </div>
+    
+    
+</body>
+</html>

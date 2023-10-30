@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.formulario {
+    width: 605px;
+    margin: 0 auto;
+    padding: 424px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+label, select, input {
+    display: block;
+    margin-bottom: 15px; 
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-container > div {
+    flex: 1;
+    margin: 5px;
+}
+
+.separator {
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+.address {
+    flex: 2;
+}
+
+.name, .surname {
+    flex: 1;
+}
+.input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5px; /* Agregar espacio vertical entre las filas */
+}
+.input-container label {
+    margin-right: 10px; /* Agregar espacio horizontal entre las etiquetas y las casillas de texto */
+}
+.input-container input[type="text"] {
+    width: 200px; /* Ajusta el ancho de la casilla de texto según tus necesidades */
+}
